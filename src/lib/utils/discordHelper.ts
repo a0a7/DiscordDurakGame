@@ -25,7 +25,7 @@ export class DiscordHelper {
 
         const { nonce, event, command, data, args } = messageData;
 
-        const handleSubscribeEvent = (eventData) => {
+        const handleSubscribeEvent = (eventData: any) => {
             this.postMessageToChild({
                 event,
                 command: "DISPATCH",
@@ -38,14 +38,14 @@ export class DiscordHelper {
                 this.notifyChildParentIsReady();
                 break;
             case "SUBSCRIBE":
-                this.validateEvent(event);
+                this.validateEvent(event); // @ts-expect-error: discordSdk is defined
                 discordSdk.subscribe(event, handleSubscribeEvent, args);
                 break;
             case "UNSUBSCRIBE":
-                this.validateEvent(event);
+                this.validateEvent(event); // @ts-expect-error: discordSdk is defined
                 discordSdk.unsubscribe(event, handleSubscribeEvent);
                 break;
-            case "SET_ACTIVITY":
+            case "SET_ACTIVITY": // @ts-expect-error: discordSdk is defined
                 const reply = await discordSdk.commands.setActivity(
                     data as any
                 );
