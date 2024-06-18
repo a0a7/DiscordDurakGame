@@ -45,6 +45,7 @@
 	"dependencies": {
 		"@discord/embedded-app-sdk": "^1.2.0",
 		"@internationalized/date": "^3.5.4",
+		"@sveltejs/adapter-cloudflare": "^4.4.1",
 		"bits-ui": "^0.21.10",
 		"clsx": "^2.1.1",
 		"cmdk-sv": "^0.0.17",
