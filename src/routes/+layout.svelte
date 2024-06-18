@@ -4,4 +4,9 @@
 
 <slot></slot>
 
-<style></style>
+<style lang="postcss">
+    :global(body) {
+		background-image: url('background_tile.png');
+        background-repeat: repeat;
+	}
+</style>
